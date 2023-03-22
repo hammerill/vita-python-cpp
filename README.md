@@ -12,7 +12,7 @@ Build for PS Vita should be performed in Linux environment (or in MSYS2 in Windo
   ```bash
   mkdir build
   cd build
-  cmake .. 
+  cmake ..
   make -j4
   ```
 4. VPK file should appear. It does nothing. You just should be happy it compiled.
@@ -20,5 +20,6 @@ Build for PS Vita should be performed in Linux environment (or in MSYS2 in Windo
 If you experience error related to `undefined "uint"`, run:
 ```bash
   sed -i 's/uint _x/uint64_t _x/g' /usr/local/vitasdk/arm-vita-eabi/include/sys/time.h
+  make -j4
 ```
 I hope your headers at `/usr/local/vitasdk/arm-vita-eabi/include/` so you won't have to edit the command.
