@@ -15,8 +15,8 @@ endif()
 project(Python-Test C CXX)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
-set(VITA_APPNAME  "Python Test")
-set(VITA_TITLEID  "PYTHONTST")
+set(VITA_APPNAME  "Python C++")
+set(VITA_TITLEID  "PYTH00010")
 set(VITA_VERSION  "01.00")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -pthread -std=c++17")
@@ -47,4 +47,6 @@ vita_create_self(${CMAKE_PROJECT_NAME}.self ${CMAKE_PROJECT_NAME})
 vita_create_vpk(${CMAKE_PROJECT_NAME}.vpk ${VITA_TITLEID} ${CMAKE_PROJECT_NAME}.self
 	VERSION ${VITA_VERSION}
 	NAME ${VITA_APPNAME}
+
+	FILE python/main.py main.py
 )
