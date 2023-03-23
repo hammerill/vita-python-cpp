@@ -48,5 +48,6 @@ vita_create_vpk(${CMAKE_PROJECT_NAME}.vpk ${VITA_TITLEID} ${CMAKE_PROJECT_NAME}.
 	VERSION ${VITA_VERSION}
 	NAME ${VITA_APPNAME}
 
+	FILE "$ENV{VITASDK}/arm-vita-eabi/lib/python27.zip" lib/python27.zip
 	FILE python/main.py main.py
 )

@@ -2,16 +2,17 @@
 
 int main(int argc, char *argv[])
 {
-	// Py_SetProgramName((char*)"app0:eboot.bin");
-	Py_Initialize();
+	Py_NoSiteFlag = 1;
+	Py_IgnoreEnvironmentFlag = 1;
+	Py_NoUserSiteDirectory = 1;
 
-	// FILE *fp;
-    // fp = fopen("app0:main.py", "r");
-    // PyRun_SimpleFile(fp, "main.py");
+	Py_SetProgramName((char*)"app0:eboot.bin");
+	Py_InitializeEx(1);
+	PySys_SetPath((char*)"app0:lib/python27.zip;app0:lib/python2.7;ux0:/data/lib/python27.zip;ux0:/data/lib/python2.7");
 
-	PyRun_SimpleString("text_file = open('ux0:data/sample.txt', 'w')\n");
-	PyRun_SimpleString("n = text_file.write('Hola ot balabola.')\n");
-	PyRun_SimpleString("text_file.close()\n");
+	FILE *fp;
+    fp = fopen("app0:main.py", "r");
+    PyRun_SimpleFile(fp, "main.py");
 
 	Py_Finalize();
 	return 0;
