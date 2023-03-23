@@ -1,3 +1,2 @@
-text_file = open("ux0:data/sample.txt", "w")
-n = text_file.write('Hola ot balabola.')
-text_file.close()
+with open("ux0:data/sample.txt", "a") as log:
+    log.write("Hola ot balabola.\n")
