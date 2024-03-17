@@ -1,5 +1,5 @@
 # Vita Python C++
-Test project to run Python 2.7 in C++ on PS Vita.
+Test project to run Python 2.7 code in C++ app on PS Vita.
 Based on [cpython-vita](https://github.com/SonicMastr/cpython-vita/) but adapted to be compiled in C++ and by newbies.
 
 ## Build
